@@ -1,8 +1,12 @@
 1)BRIDGE PATTERN 
+
 DrawAPI.java
+
 public interface DrawAPI 
 
+
 {
+
    public void drawCircle(int radius, int x, int y);
 
 }
@@ -27,6 +31,7 @@ public class RedCircle implements DrawAPI
 
 
 GreenCircle.java
+
 public class GreenCircle implements DrawAPI 
 
 {
@@ -44,6 +49,7 @@ public class GreenCircle implements DrawAPI
 
 
 Shape.java
+
 public abstract class Shape 
 
 {
@@ -63,6 +69,7 @@ public abstract class Shape
 
 
 Circle.java
+
 public class Circle extends Shape 
 
 {
@@ -93,6 +100,7 @@ public class Circle extends Shape
 
 
 BridgePattern.java
+
 public class BridgePattern 
 
 {
@@ -115,7 +123,9 @@ public class BridgePattern
 
 
 2)ADAPTER PATTERN 
+
 MediaPlayer.java
+
 public interface MediaPlayer 
 
 {
