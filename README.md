@@ -12,70 +12,103 @@ RedCircle.java
 public class RedCircle implements DrawAPI 
 
 {
-   @Override
+  
+  @Override
    public void drawCircle(int radius, int x, int y) 
    
    {
+   
       System.out.println("Drawing Circle[ color: red, radius: " + radius + ", x: " + x + ", " + y + "]");
-   }
+  
+  }
+  
 }
+
 
 
 GreenCircle.java
 public class GreenCircle implements DrawAPI 
+
 {
-   @Override
-   public void drawCircle(int radius, int x, int y) 
-   {
+  
+  @Override
+    public void drawCircle(int radius, int x, int y) 
+  
+  {
+      
       System.out.println("Drawing Circle[ color: green, radius: " + radius + ", x: " + x + ", " + y + "]");
+   
    }
+   
 }
 
 
 Shape.java
 public abstract class Shape 
+
 {
+
    protected DrawAPI drawAPI;
    
    protected Shape(DrawAPI drawAPI)
    {
-      this.drawAPI = drawAPI;
+   
+            this.drawAPI = drawAPI;
+            
    }
+   
    public abstract void draw();	
+   
 }
 
 
 Circle.java
 public class Circle extends Shape 
+
 {
+
    private int x, y, radius;
+   
 
    public Circle(int x, int y, int radius, DrawAPI drawAPI) 
+   
    {
+   
       super(drawAPI);
       this.x = x;  
       this.y = y;  
       this.radius = radius;
+      
    }
 
    public void draw() 
+   
    {
+   
       drawAPI.drawCircle(radius,x,y);
+      
    }
+   
 }
 
 
 BridgePattern.java
 public class BridgePattern 
+
 {
+
    public static void main(String[] args) 
+   
    {
+   
       Shape redCircle = new Circle(100,100, 10, new RedCircle());
       Shape greenCircle = new Circle(100,100, 10, new GreenCircle());
 
       redCircle.draw();
       greenCircle.draw();
+      
    }
+   
 }
 
 
@@ -84,33 +117,46 @@ public class BridgePattern
 2)ADAPTER PATTERN 
 MediaPlayer.java
 public interface MediaPlayer 
+
 {
+
    public void play(String audioType, String fileName);
+   
 }
 
 
 AdvancedMediaPlayer.java
 public interface AdvancedMediaPlayer 
+
 {	
+
    public void playVlc(String fileName);
    public void playMp4(String fileName);
+   
 }
 
 
 VlcPlayer.java
 public class VlcPlayer implements AdvancedMediaPlayer
+
 {
    @Override
    public void playVlc(String fileName) 
+   
    {
-      System.out.println("Playing vlc file. Name: "+ fileName);		
+   
+      System.out.println("Playing vlc file. Name: "+ fileName);	
+      
    }
 
    @Override
    public void playMp4(String fileName) 
    {
+   
    }
+   
 }
+
 
 
 Mp4Player.java
